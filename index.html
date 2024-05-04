@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Montre description</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="all.min.css">
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .4s;
+}
+a:hover{
+    color: rgb(215, 47, 100);
+}
+body{
+    max-width: 100%;
+    background-color: rgb(39, 31, 31);
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* La premiere partie : En tete */
+
+.entete{
+    width: 100%;
+    min-height: 50vh;
+    background-image: url("images/Network-Icon-Graphics-37660012-1-580x387.png");
+    background-size: cover;
+    background-position: center;
+}
+.entete .navBar{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(7px);
+
+}
+.entete .navBar .logo{
+    font-size: 1.8rem;
+    margin-left: 18px;
+}
+span{
+    color: rgb(215, 47, 100);
+}
+.entete .navBar ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    margin-right: 1px;
+    padding-right: 0;
+}
+.entete .navBar ul li:hover {
+    border-bottom: 2px solid rgb(215, 47, 100);
+    transition: 1s;
+}
+.suscribe {
+    background-color: rgb(215, 47, 100);
+    color: white;
+    border-radius: 30px;
+    width: 110px;
+    height: 40px;
+    text-align: center;
+    align-items: center;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s;
+    border: none;
+}
+.suscribe:hover{
+    background-color: rgb(48, 41, 41);
+    border: 2px solid rgb(215, 47, 100);
+}
+
+
+.entete .main-header {
+    padding-top: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.entete .main-header .text{
+    margin-left: 50px;
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+.entete .main-header .text h5{
+    font-size: 22px;
+    padding: 10px 0;
+}
+.entete .main-header .text h2{
+    font-size: 40px;
+    margin-top: 5px;
+    padding: 10px 0;
+}
+.entete .main-header .text h4{
+    font-size: 22px;
+    padding: 10px 0;
+}
+.entete .main-header .text form{
+    max-width: 100%;
+    padding: 5px;
+    background-color: antiquewhite;
+    color: black;
+    border-radius: 30px;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.entete .main-header .text form input:first-child{
+    border: none;
+    width: 100%;
+    border-radius: 20px;
+    font-size: 23px;
+    padding: 10px;
+}
+.entete .navBar .menu {
+    display: none;
+    font-size: 30px;
+}
+
+@media (max-width: 800px){
+    .entete .navBar .menu {
+        display: block;
+    }
+    .entete .navBar .menu:before{
+        content: "\2635";
+    }
+    .entete .navBar ul {
+        display: none;
+    }
+}
+/* La Seconde partie : Image */
+
+
+
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background-color: rgb(41, 35, 35);
+}
+.box {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    right: 0;
+    transform-style: preserve-3d;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)* 45deg)) translateZ(400px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+}
+
+.box span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* La partie : Bloc About */
+
+
+
+.about{
+    background-color: rgb(57, 39, 39);
+    width: 100vw;
+    min-height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 100px 0;
+}
+.about .img img {
+    width: 430px;
+    height: auto;
+    margin-right: 0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: 12 1 2 whitesmoke;
+    border-radius: 50%;
+}
+.about .msg {
+    width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+} 
+.about .msg h1{
+    padding: 30px 0;
+    font-size: 40px;
+}
+.about .msg h4{
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+.about .msg button{
+    margin-top: 20px;
+}
+.about .msg p{
+    letter-spacing: 1px;
+    line-height: 28px;
+}
+
+/* La partie : services */
+
+
+
+.services {
+    min-height: 50vh;
+    width: 100vw;
+    background-color: rgb(78, 38, 38);
+}
+.services h1{
+    text-align: center;
+    font-size: 50px;
+    padding: 20px;
+}
+.services .classification {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 70%;
+    margin: 0 100px;
+}
+.services .classification .sert {
+    background-color: rgb(39, 33, 33);
+    border-radius: 30px;
+    padding: 50px;
+    margin: 10px;
+    text-align: center;
+}
+.services .classification .sert i{
+    color: rgb(215, 47, 100);
+    margin: 2px auto;
+}
+.services .classification .sert h4{
+    color: rgb(215, 47, 100);
+    margin: 2px auto;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 15px;
+}
+
+.services .classification .sert button {
+    margin: 15px auto;
+}
+
+/* La partie : competences*/
+
+
+.competences {
+    background-color: rgb(30, 15, 15);
+    min-height: 50vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.competences h1{
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 40px;
+}
+.competences .competence {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+}
+
+/* \2630 \2715 */
+.competences .competence .com {
+    background-color: rgb(68, 66, 66);
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 15px;
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.competences .competence .com h2{
+    color: rgb(215, 47, 100);
+    padding: 10px;
+}
+
+/* La partie : photo*/
+
+
+.photo {
+    background-color: rgb(62, 59, 59);
+    min-height: 50vh;
+    width: 100vw;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.photo .parole {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px;
+    width: 40%;
+}
+.photo .parole button {
+    margin: 20px auto;
+}
+.photo .appari img {
+    height: 70vh;
+    width: 80%;
+    border-radius: 30px;
+    margin: 15px;
+    display: none;
+    transition: 1s;
+}
+
+/* La derniere partie : Footer */
+
+
+footer {
+    min-height: 50vh;
+    
+}
+footer .pre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer h1, h2 {
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+footer .reseignement {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+footer .sociaux {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 10px auto;
+}
+footer .sociaux a{
+    margin: 10px;
+}
+</style>
+<body>
+    <!------------En tete ------------->
+    <header class="entete">
+        <nav class="navBar">
+            <h4 class="logo" >El kil<span>ler</span></h4>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Compétences</a></li>
+                <li><a href="#">Conctact</a></li>
+            </ul>
+            <a class="suscribe" href="#">Suscribe</a>
+            <div class="menu"></div>
+        </nav>
+        <div class="main-header">
+            <div class="text">
+                <h5>Hy, je repond au nom de</h5>
+                <h2>Mahamad Al <span>Mahadi</span></h2>
+                <h4>Je suis un infographiste professionnel.</h4>
+                <form action="">
+                    <input type="email" name="email" placeholder="Entrer votre adresse mail">
+                    <input type="submit" name="submit" class="suscribe">
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!------------Second bloc: Image ------------->
+    <section class="image">
+        <div class="box">
+            <span style="--i:1;"><img src="images/20240208_162016.jpg" alt=""></span>
+            <span style="--i:2;"><img src="images/20240208_162309.jpg" alt=""></span>
+            <span style="--i:3;"><img src="images/IMG-20231226-WA0085.jpg" alt=""></span>
+            <span style="--i:4;"><img src="images/IMG-20240209-WA0070.jpg" alt=""></span>
+            <span style="--i:5;"><img src="images/IMG_1165.jpeg" alt=""></span>
+            <span style="--i:6;"><img src="images/share7343730696695903413.jpg" alt=""></span>
+            <span style="--i:7;"><img src="images/Snapchat-1871984401.jpg" alt=""></span>
+            <span style="--i:8;"><img src="images/Snapchat-220509367.jpg" alt=""></span>
+        </div>
+    </section>
+
+    <!------------Second bloc: About ------------->
+    <section class="about">
+        <div class="img">
+            <img src="images/20240208_162309.jpg" alt="">
+        </div>
+        <div class="msg">
+            <h1>A propos de <span>moi</span></h1>
+            <h4>Photographiste en excellence</h4>
+            <p>
+                Doté d'une experience dans le domaine d'infographie
+                je suis capable m'integrer facilement et faire des innovations et créations hors norme,
+                je peut improviser et m'adapter à toutes les difficultés et réléver les defis qui se presente.
+            </p>
+            <button type="button" class="suscribe">Parlons-en</button>
+        </div>
+    </section>
+
+    <!------------Troisiem bloc: Services ------------->
+    <section class="services">
+        <h1>Nos services</h1>
+
+        <div class="classification">
+            <div class="sert">
+                <i class="fas fa-bounce"></i>
+                <h4>Montages</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aliquam non minima voluptatem repellat unde ad earum.</p>
+                <button type="button" class="suscribe">Visage</button>
+
+            </div>
+        
+
+            <div class="sert">
+                <i class="fas fa-bounce"></i>
+                <h4>Perfection</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aliquam non minima voluptatem repellat unde ad earum.</p>
+                <button type="button" class="suscribe">Clips</button>
+            </div>
+
+            <div class="sert">
+                <i class="fas fa-bounce"></i>
+                <h4>Photographie</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aliquam non minima voluptatem repellat unde ad earum.</p>
+                <button type="button" class="suscribe">Prendre</button>
+            </div>
+        </div>
+
+    </section>
+    <!------------Quatrieme bloc: Competences ------------->
+    <section class="competences">
+        <h1>Mes compétences supplementaires</h1>
+        <div class="competence">
+            <div class="com">
+                <h2>PhotoShop</h2>
+                <p>
+                    Je maitrise PhotoShop par excellence sur les description des creation des cartes de visites, des publicités professionnelles, des modifications camera.
+                </p>
+            </div>
+
+            <div class="com">
+                <h2>Excel</h2>
+                <p>
+                    De même excel est devenu facile pour moi suite a l'entrainement beaucoup plus avisé sur des specificités professionnels.
+                </p>
+            </div>
+
+            <div class="com">
+                <h2>Word</h2>
+                <p>
+                    Je maitrise aussi toutes le coins de Word pour presenter mes discours j'utilise souvant word pour une excellente presentation de texte.
+                </p>
+            </div>
+
+            <div class="com">
+                <h2>Cap cut</h2>
+                <p>
+                    Pour faire une video stylé amenant a un visiteur de prendre de temps voir la video resultante, j'utilise Cap cut pour une amelioration plus pertinente.
+                </p>
+            </div>
+
+            <div class="com">
+                <h2>PowerDirector</h2>
+                <p>
+                    Pour de modification et la prise de photo elegante, Power director est mon logociel preferé pour des petite amelioration de la camera et du photo resultante.
+                </p>
+            </div>
+        </div>
+        
+    </section>
+
+    <!------------Cinquieme bloc: photo ------------->
+    <section class="photo">
+        <div class="parole">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, nulla dolores sit cupiditate non doloribus sapiente magni obcaecati ut culpa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, iusto quibusdam officiis, dolore culpa in, odio fugiat inventore quaerat tempora unde exercitationem? Vero, quis obcaecati. Illo amet ullam quibusdam vel!
+                <br><br><br>
+                Laissez-moi vous donner une belle flame de la journée.
+            </p>
+            <button class="suscribe" id="voir">Engagez-moi</button>
+        </div>
+        <div class="appari">
+            <img src="images/black.jpg" alt="" class="apparie">
+        </div>
+    </section>
+
+    <!------------Sixieme bloc: Footer ------------->
+
+    <footer>
+        <div class="pre">
+            <h1>Mahamad Al <span>Mahadi</span></h1>
+        <div class="reseignement">
+            <i class=""></i>
+            <h3> <span>Lieu: </span>N'Djamena\Tchad</h3>
+        </div>
+
+        <div class="reseignement">
+            <i class=""></i>
+            <h3><span>Tel: </span>+235 66 46 92 91</h3>
+        </div>
+
+        <div class="reseignement">
+            <i class=""></i>
+            <h3> <span>E-mail: </span>almahdiahmad@gmail.com</h3>
+        </div>
+
+        <div class="reseignement">
+            <i class=""></i>
+            <h3> <span>Site: </span>elkiler.td</h3>
+        </div>
+        </div>
+        
+
+        <h2>Suivez-moi dans les réseaux sociaux</h2>
+        <div class="sociaux">
+            <a class="suscribe" href="#">Facebook</a>
+            <a class="suscribe" href="#">Instagrame</a>
+            <a class="suscribe" href="#">Twitter</a>
+        </div>
+
+
+
+    </footer>
+
+
+
+
+    
+    
+    <script>
+        
+const voir = document.getElementById('voir');
+const appari = document.querySelector('.apparie');
+
+voir.addEventListener('click', () => {
+    appari.style.display = "block";
+    
+});
+    </script>
+</body>
+</html>
